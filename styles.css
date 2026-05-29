@@ -1947,3 +1947,35 @@ html, body {
     opacity: 1 !important;
   }
 }
+
+/* Amplía el fix de reveal-right a móviles más grandes */
+@media (max-width: 960px) {
+  .reveal-right {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .contact-page-section {
+    overflow-x: hidden;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .contact-form-col,
+  .contact-info-col {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0; /* <-- clave: evita que el grid hijo se expanda */
+  }
+
+  .form-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
