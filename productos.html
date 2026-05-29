@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO: Title optimizado con keyword principal -->
+  <title>Carta de Bubble Tea y Açai Bowls en Granada – Garden Boba</title>
+
+  <!-- SEO: Meta description mejorada (la existente era buena, se refina) -->
+  <meta name="description" content="Consulta la carta completa de Garden Boba Granada: Bubble Teas artesanales, Açai Bowls orgánicos y Cafés de especialidad. Pide en local o a domicilio vía Glovo." />
+
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://gardenboba.es/productos.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Carta de Bubble Tea y Açai Bowls en Granada – Garden Boba" />
+  <meta property="og:description" content="Explora la carta completa de Garden Boba Granada: Bubble Teas artesanales, Açai Bowls orgánicos y Cafés de especialidad. Pide en local o a domicilio vía Glovo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gardenboba.es/productos.html" />
+  <meta property="og:image" content="https://gardenboba.es/img/logo.png" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Garden Boba Granada" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Carta de Bubble Tea y Açai Bowls en Granada – Garden Boba" />
+  <meta name="twitter:description" content="Explora la carta completa de Garden Boba Granada: Bubble Teas artesanales, Açai Bowls orgánicos y Cafés de especialidad. Pide en local o vía Glovo." />
+  <meta name="twitter:image" content="https://gardenboba.es/img/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+
+  <style>
+    /* ══════════════════════════════════════════════════
+       SECCIÓN DESTACADOS
+       Fondo: blanco puro → conecta sin fricción con el
+       hero de la página que termina en --off-white
+    ══════════════════════════════════════════════════ */
+    .featured-section {
+      padding-block: var(--section-py);
+      background: linear-gradient(160deg, var(--mint-light) 0%, var(--boba-light) 100%);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .featured-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      /* Borde más pronunciado para compensar que ya no hay fondo de color */
+      border: 1.5px solid var(--gray-light);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .55s var(--ease), transform .55s var(--ease),
+                  box-shadow .3s var(--ease);
+
+      &.visible { opacity: 1; transform: translateY(0); }
+      &:hover   { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    }
+
+    /* Imagen más grande en destacados: 280px */
+    .featured-img-wrap {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+
+      & img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: transform .5s var(--ease);
+      }
+
+      .featured-card:hover & img { transform: scale(1.07); }
+    }
+
+    .featured-crown {
+      position: absolute;
+      top: .9rem; left: .9rem;
+      background: #FFC244;
+      color: var(--dark);
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: .75rem;
+      padding: .35em .85em;
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+      letter-spacing: .04em;
+    }
+
+    .featured-rank {
+      position: absolute;
+      bottom: .9rem; right: .9rem;
+      width: 36px; height: 36px;
+      background: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--mint-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .featured-body {
+      padding: 1.4rem 1.5rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      flex: 1;
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .4rem;
+
+      & h3 {
+        font-family: var(--font-head);
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: var(--dark);
+        line-height: 1.2;
+      }
+
+      & .featured-price {
+        font-family: var(--font-head);
+        font-size: 1.15rem;
+        font-weight: 900;
+        color: var(--mint-dark);
+        white-space: nowrap;
+      }
+    }
+
+    .featured-desc {
+      font-size: .92rem;
+      color: var(--gray);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .featured-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-bottom: .4rem;
+    }
+
+    .featured-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: .9rem;
+      padding: .75em 1.2em;
+      border-radius: 999px;
+      background: var(--dark);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .22s var(--ease), transform .18s var(--ease), box-shadow .22s var(--ease);
+
+      &:hover {
+        background: #111;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,.25);
+      }
+    }
+
+    /* ══════════════════════════════════════════════════
+       INTRO CARTA
+    ══════════════════════════════════════════════════ */
+    .carta-intro {
+      padding-block: clamp(32px, 5vw, 60px) 0;
+      background: var(--off-white);
+    }
+
+    .carta-intro-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .carta-intro-text h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: .35rem;
+
+      & em { font-style: normal; color: var(--mint-dark); }
+    }
+
+    .carta-intro-text p {
+      color: var(--gray);
+      font-size: .98rem;
+      max-width: 440px;
+    }
+
+    .carta-glovo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: .95rem;
+      padding: .75em 1.6em;
+      border-radius: 999px;
+      background: #FFC244;
+      color: var(--dark);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(255,194,68,.4);
+      transition: filter .2s var(--ease), transform .18s var(--ease), box-shadow .2s var(--ease);
+      white-space: nowrap;
+
+      &:hover {
+        filter: brightness(1.07);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(255,194,68,.5);
+      }
+    }
+
+    /* ══════════════════════════════════════════════════
+       CARTA COMPLETA — GRID 3 COLUMNAS (más grande)
+    ══════════════════════════════════════════════════ */
+
+    /* Override del grid: 3 columnas en lugar de 4 */
+    .products-section .products-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    /* Imagen más alta: 260px */
+    .products-section .product-img-wrap {
+      height: 260px;
+    }
+
+    /* Cuerpo con más padding al tener más espacio */
+    .products-section .product-body {
+      padding: 1.4rem 1.6rem 1.8rem;
+      gap: .8rem;
+    }
+
+    /* Nombre más grande al tener más tarjeta */
+    .products-section .product-name {
+      font-size: 1.15rem;
+    }
+
+    /* Descripción más legible */
+    .products-section .product-desc {
+      font-size: .95rem;
+    }
+
+    /* ── Botón Glovo en tarjeta ── */
+    .product-glovo-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      width: 100%;
+      margin-top: auto;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: .88rem;
+      padding: .7em 1.2em;
+      border-radius: 999px;
+      background: var(--off-white);
+      color: var(--dark);
+      border: 1.5px solid var(--gray-light);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .22s var(--ease), border-color .22s var(--ease),
+                  color .22s var(--ease), transform .18s var(--ease);
+
+      &:hover {
+        background: #FFC244;
+        border-color: #FFC244;
+        color: var(--dark);
+        transform: translateY(-2px);
+      }
+    }
+
+    /* Hint "también en local" */
+    .product-local-hint {
+      text-align: center;
+      font-size: .75rem;
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--gray);
+      letter-spacing: .03em;
+      margin-top: .25rem;
+
+      & i { color: var(--mint-dark); margin-right: .25rem; }
+    }
+
+    /* ══════════════════════════════════════════════════
+       BANNER DELIVERY
+    ══════════════════════════════════════════════════ */
+    .delivery-banner {
+      background: #FFC244;
+      padding: clamp(2rem, 4vw, 3.5rem) 1rem;
+      position: relative;
+      z-index: 3;
+    }
+
+    .delivery-banner-inner {
+      max-width: 680px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .delivery-banner h3 {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .delivery-banner p {
+      color: rgba(0,0,0,.65);
+      font-size: 1rem;
+      font-weight: 500;
+      max-width: 460px;
+    }
+
+    .delivery-banner-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1rem;
+      padding: .85em 2em;
+      border-radius: 999px;
+      background: var(--dark);
+      color: var(--white);
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      transition: background .2s var(--ease), transform .18s var(--ease);
+
+      &:hover { background: #111; transform: translateY(-2px); }
+    }
+
+    .delivery-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      justify-content: center;
+    }
+
+    .delivery-badge {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: .8rem;
+      padding: .3em .85em;
+      border-radius: 999px;
+      background: rgba(0,0,0,.1);
+      color: var(--dark);
+    }
+
+    /* ══════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════ */
+    @media (max-width: 960px) {
+      .featured-grid { grid-template-columns: 1fr 1fr; }
+      .products-section .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .featured-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+      .products-section .products-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+      .carta-intro-inner { flex-direction: column; align-items: flex-start; }
+      .products-section .product-img-wrap { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Garden Boba Granada – Bubble Tea y Açai" class="logo-img" />
+      Garden Boba
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="quienes-somos.html">Equipo</a>
+      <a href="productos.html" class="nav-active">Productos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada"
+         target="_blank" rel="noopener"
+         class="nav-cta">Pedir en Glovo 🛵</a>
+    </nav>
+  </header>
+
+
+  <!-- ===================== HERO CORTO ===================== -->
+  <section class="page-hero">
+    <div class="page-hero-media">
+      <img
+        src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1600&q=80"
+        alt="Carta de Bubble Teas y Açai Bowls artesanales de Garden Boba Granada"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <span class="hero-badge">🧋 Nuestra carta</span>
+      <!-- H1 con keyword principal de página -->
+      <h1 class="hero-title">Carta de Bubble Tea y Açai en Granada:<br/>encuentra tu <em>favorito</em></h1>
+      <p class="hero-sub">
+        Bubble Teas artesanales · Açai Bowls orgánicos · Cafés de especialidad.<br/>
+        Todo hecho al momento, solo para ti.
+      </p>
+    </div>
+    <div class="page-hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--mint-light)"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ===================== PRODUCTOS DESTACADOS ===================== -->
+  <section class="featured-section" id="destacados">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="pill">⭐ Favoritos del público</span>
+        <h2>Los más <em>pedidos</em></h2>
+        <p>Nuestros clientes ya han decidido por ti. Aquí están los tres que nunca fallan.</p>
+      </div>
+
+      <div class="featured-grid">
+
+        <!-- Destacado 1 -->
+        <article class="featured-card">
+          <div class="featured-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1625865408636-bb36c6e57423?auto=format&fit=crop&w=700&q=80"
+              alt="Brown Sugar Milk Tea con perlas de tapioca caramelizadas, el más vendido de Garden Boba Granada"
+              loading="lazy"
+            />
+            <span class="featured-crown">🔥 Nº1 en ventas</span>
+            <span class="featured-rank">1</span>
+          </div>
+          <div class="featured-body">
+            <div class="featured-meta">
+              <h3>Brown Sugar Milk Tea</h3>
+              <span class="featured-price">4,90 €</span>
+            </div>
+            <p class="featured-desc">Té negro intenso, leche de avena cremosa y perlas de tapioca bañadas en caramelo de azúcar moreno artesanal.</p>
+            <div class="featured-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Tapioca</span>
+              <span class="tag">Leche avena</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada?content=menu-c.2959783844&section=thai-milk-tea-s.6287215544"
+               target="_blank" rel="noopener" class="featured-cta">
+              <i class="fa-solid fa-motorcycle"></i> Pedir en Glovo
+            </a>
+          </div>
+        </article>
+
+        <!-- Destacado 2 -->
+        <article class="featured-card">
+          <div class="featured-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80"
+              alt="Classic Açai Bowl orgánico con granola artesanal y fresas frescas de Garden Boba Granada"
+              loading="lazy"
+            />
+            <span class="featured-crown">🫐 Favorito açai</span>
+            <span class="featured-rank">2</span>
+          </div>
+          <div class="featured-body">
+            <div class="featured-meta">
+              <h3>Classic Açai Bowl</h3>
+              <span class="featured-price">8,90 €</span>
+            </div>
+            <p class="featured-desc">Pulpa de açai orgánica, plátano, granola artesanal, fresas frescas, semillas de chía y miel de agave.</p>
+            <div class="featured-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Sin gluten</span>
+              <span class="tag">Orgánico</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada?content=menu-c.2959783844&section=acai-s.6287215541"
+               target="_blank" rel="noopener" class="featured-cta">
+              <i class="fa-solid fa-motorcycle"></i> Pedir en Glovo
+            </a>
+          </div>
+        </article>
+
+        <!-- Destacado 3 -->
+        <article class="featured-card">
+          <div class="featured-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1622597467836-f3e7df067d7e?auto=format&fit=crop&w=700&q=80"
+              alt="Taro Milk Tea morado con leche de coco y perlas de tapioca de Garden Boba Granada"
+              loading="lazy"
+            />
+            <span class="featured-crown">✨ El del momento</span>
+            <span class="featured-rank">3</span>
+          </div>
+          <div class="featured-body">
+            <div class="featured-meta">
+              <h3>Taro Milk Tea</h3>
+              <span class="featured-price">5,20 €</span>
+            </div>
+            <p class="featured-desc">Crema de taro morada con leche de coco, perlas de tapioca y un toque de vainilla natural. Un color que pide foto.</p>
+            <div class="featured-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Taro</span>
+              <span class="tag">Leche coco</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada?content=menu-c.2959783844&section=taro-s.6287215545"
+               target="_blank" rel="noopener" class="featured-cta">
+              <i class="fa-solid fa-motorcycle"></i> Pedir en Glovo
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== INTRO CARTA DIGITAL ===================== -->
+  <div class="carta-intro">
+    <div class="container">
+      <div class="carta-intro-inner">
+        <div class="carta-intro-text">
+          <h2>Nuestra <em>carta completa</em></h2>
+          <p>Explora todos los sabores, filtra por categoría y elige el tuyo. ¿Lo quieres en casa? Pide por Glovo.</p>
+        </div>
+        <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada"
+           target="_blank" rel="noopener" class="carta-glovo-btn">
+          <i class="fa-solid fa-motorcycle"></i> Abrir en Glovo
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ===================== CARTA COMPLETA + FILTROS ===================== -->
+  <section class="products-section" id="carta">
+    <div class="container">
+
+      <div class="filter-bar" role="group" aria-label="Filtrar por categoría">
+        <button class="filter-btn active" data-filter="all">
+          <span class="filter-icon">✨</span> Todos
+        </button>
+        <button class="filter-btn" data-filter="bubble-tea">
+          <span class="filter-icon">🧋</span> Bubble Tea
+        </button>
+        <button class="filter-btn" data-filter="acai">
+          <span class="filter-icon">🫐</span> Açai Bowls
+        </button>
+        <button class="filter-btn" data-filter="cafe">
+          <span class="filter-icon">☕</span> Cafés &amp; Especiales
+        </button>
+      </div>
+
+      <p class="filter-count" id="filter-count" aria-live="polite"></p>
+
+      <div class="products-grid" id="products-grid">
+
+        <!-- ── BUBBLE TEA 1 ── -->
+        <article class="product-card" data-category="bubble-tea">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1625865408636-bb36c6e57423?auto=format&fit=crop&w=600&q=80" alt="Brown Sugar Milk Tea con tapioca caramelizada de Garden Boba Granada" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--hot">🔥 Top Ventas</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Brown Sugar Milk Tea</h3>
+              <span class="product-price">4,90 €</span>
+            </div>
+            <p class="product-desc">Té negro intenso, leche de avena cremosa y perlas de tapioca bañadas en caramelo de azúcar moreno.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Tapioca</span>
+              <span class="tag">Leche avena</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── BUBBLE TEA 2 ── -->
+        <article class="product-card" data-category="bubble-tea">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1622597467836-f3e7df067d7e?auto=format&fit=crop&w=600&q=80" alt="Taro Milk Tea morado con leche de coco y perlas de tapioca" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--new">✨ Nuevo</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Taro Milk Tea</h3>
+              <span class="product-price">5,20 €</span>
+            </div>
+            <p class="product-desc">Crema de taro morada con leche de coco, perlas de tapioca y un toque de vainilla natural.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Taro</span>
+              <span class="tag">Leche coco</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── BUBBLE TEA 3 ── -->
+        <article class="product-card" data-category="bubble-tea">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Matcha Boba Latte con matcha ceremonial japonés y leche de avena" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--fresh">🍃 Fresco</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Matcha Boba Latte</h3>
+              <span class="product-price">5,50 €</span>
+            </div>
+            <p class="product-desc">Matcha ceremonial japonés, leche de avena fría, perlas de tapioca y un drizzle de miel de agave.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Matcha</span>
+              <span class="tag">Sin azúcar añadida</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── BUBBLE TEA 4 ── -->
+        <article class="product-card" data-category="bubble-tea">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Strawberry Yakult Boba con puré de fresa y popping boba de maracuyá" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--fresh">🍓 Fresco</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Strawberry Yakult Boba</h3>
+              <span class="product-price">5,00 €</span>
+            </div>
+            <p class="product-desc">Té verde ligero, Yakult, puré de fresa natural, perlas de popping de maracuyá y hielo bien frío.</p>
+            <div class="product-tags">
+              <span class="tag">Popping boba</span>
+              <span class="tag">Fresa</span>
+              <span class="tag">Refrescante</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── BUBBLE TEA 5 ── -->
+        <article class="product-card" data-category="bubble-tea">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80" alt="Thai Milk Tea especiado con cardamomo y leche condensada" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--hot">🌶️ Clásico</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Thai Milk Tea</h3>
+              <span class="product-price">4,80 €</span>
+            </div>
+            <p class="product-desc">Té tailandés especiado con leche condensada, cardamomo y perlas de tapioca negras. Dulce e intenso.</p>
+            <div class="product-tags">
+              <span class="tag">Thai</span>
+              <span class="tag">Cardamomo</span>
+              <span class="tag">Leche condensada</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── BUBBLE TEA 6 ── -->
+        <article class="product-card" data-category="bubble-tea">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="Lychee Green Tea refrescante con sirope de lichi y popping boba" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--fresh">🍈 Refrescante</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Lychee Green Tea</h3>
+              <span class="product-price">4,90 €</span>
+            </div>
+            <p class="product-desc">Té verde suave con sirope de lichi, popping boba de frutos rojos y hielo picado. Ligero y refrescante.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Lichi</span>
+              <span class="tag">Popping boba</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── AÇAI BOWL 1 ── -->
+        <article class="product-card" data-category="acai">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80" alt="Classic Açai Bowl orgánico con granola artesanal y fresas frescas" loading="lazy"/>
+            <div class="product-badges">
+              <span class="badge badge--hot">🔥 Top Ventas</span>
+              <span class="badge badge--vegan">🌱 Vegano</span>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Classic Açai Bowl</h3>
+              <span class="product-price">8,90 €</span>
+            </div>
+            <p class="product-desc">Pulpa de açai orgánica, plátano, granola artesanal, fresas frescas, semillas de chía y miel de agave.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Sin gluten</span>
+              <span class="tag">Orgánico</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── AÇAI BOWL 2 ── -->
+        <article class="product-card" data-category="acai">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=600&q=80" alt="Tropical Açai Bowl con mango, piña, coco y granola de quinoa" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--fresh">☀️ Verano</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Tropical Açai Bowl</h3>
+              <span class="product-price">9,50 €</span>
+            </div>
+            <p class="product-desc">Base de açai con mango, piña, coco rallado tostado, granola de quinoa y lima exprimida al momento.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Mango</span>
+              <span class="tag">Coco</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── AÇAI BOWL 3 ── -->
+        <article class="product-card" data-category="acai">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=600&q=80" alt="Garden Power Bowl proteico de açai con mantequilla de cacahuete y cacao" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--new">💪 Proteico</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Garden Power Bowl</h3>
+              <span class="product-price">10,50 €</span>
+            </div>
+            <p class="product-desc">Açai con proteína vegetal, mantequilla de cacahuete, plátano, granola extra y cacao en polvo. Para los más activos.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Proteico</span>
+              <span class="tag">Cacahuete</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── CAFÉ ESPECIAL 1 ── -->
+        <article class="product-card" data-category="cafe">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="Garden Matcha Latte de especialidad con lavanda y flores comestibles" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--new">⭐ Especial</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Garden Matcha Latte</h3>
+              <span class="product-price">4,50 €</span>
+            </div>
+            <p class="product-desc">Matcha ceremonial, leche de avena vaporizada, sirope de lavanda y decoración de flores comestibles.</p>
+            <div class="product-tags">
+              <span class="tag">Especialidad</span>
+              <span class="tag">Lavanda</span>
+              <span class="tag">Flores</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── CAFÉ ESPECIAL 2 ── -->
+        <article class="product-card" data-category="cafe">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1485808191679-5f86510bd9d4?auto=format&fit=crop&w=600&q=80" alt="Dalgona Boba Coffee con espuma batida a mano sobre leche de avena fría" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--hot">☕ Must Try</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Dalgona Boba Coffee</h3>
+              <span class="product-price">5,20 €</span>
+            </div>
+            <p class="product-desc">Espuma dalgona de café batida a mano sobre leche de avena fría con perlas de tapioca en el fondo.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Café</span>
+              <span class="tag">Instagrameable</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+        <!-- ── CAFÉ ESPECIAL 3 ── -->
+        <article class="product-card" data-category="cafe">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Hojicha Latte con té tostado japonés y leche de avena, poca cafeína" loading="lazy"/>
+            <div class="product-badges"><span class="badge badge--fresh">🍵 Suave</span></div>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3 class="product-name">Hojicha Latte</h3>
+              <span class="product-price">4,80 €</span>
+            </div>
+            <p class="product-desc">Té hojicha tostado japonés con leche de avena caliente o fría. Suave, ahumado y sin apenas cafeína.</p>
+            <div class="product-tags">
+              <span class="tag tag--vegan">🌱 Vegano</span>
+              <span class="tag">Hojicha</span>
+              <span class="tag">Poca cafeína</span>
+            </div>
+            <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" rel="noopener" class="product-glovo-btn">
+              <i class="fa-solid fa-motorcycle"></i> Ver en Glovo
+            </a>
+            <p class="product-local-hint"><i class="fa-solid fa-store"></i> También disponible en local</p>
+          </div>
+        </article>
+
+      </div><!-- /products-grid -->
+
+      <div class="no-results" id="no-results" aria-live="polite" hidden>
+        <span>😢</span>
+        <p>No hay productos en esta categoría aún. ¡Vuelve pronto!</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================== BANNER DELIVERY ===================== -->
+  <div class="delivery-banner">
+    <div class="delivery-banner-inner">
+      <h3>¿Te lo llevamos a casa? 🛵</h3>
+      <p>Todos nuestros productos disponibles a domicilio a través de <strong>Glovo</strong>. Fácil, rápido y sin moverte del sofá.</p>
+      <div class="delivery-badges">
+        <span class="delivery-badge">🕐 30–45 min</span>
+        <span class="delivery-badge">📍 Granada ciudad</span>
+        <span class="delivery-badge">🧋 Carta completa</span>
+      </div>
+      <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada"
+         target="_blank" rel="noopener" class="delivery-banner-btn">
+        <i class="fa-solid fa-motorcycle"></i> Pedir en Glovo ahora
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contacto">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">🌿 Garden Boba</p>
+        <p>Bubble Tea & Açai Bowls<br/>Granada, España</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram de Garden Boba Granada"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok de Garden Boba Granada"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="WhatsApp de Garden Boba Granada"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Navegar</h4>
+        <a href="index.html#inicio">Inicio</a>
+        <a href="quienes-somos.html">Equipo</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Calle Ejemplo 12, Granada</p>
+        <p><i class="fa-solid fa-clock"></i> Lun–Dom · 10:00 – 21:00</p>
+        <p><i class="fa-solid fa-envelope"></i> hola@gardenboba.es</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Garden Boba · Hecho con 🧋 en Granada</p>
+    </div>
+  </footer>
+
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    /* ── Navbar ── */
+    const burger   = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+    const navbar   = document.getElementById('navbar');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      burger.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        burger.classList.remove('active');
+      })
+    );
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ── Scroll-reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.section-header, .product-card, .featured-card').forEach(el =>
+      revealObserver.observe(el)
+    );
+
+    /* ── Filtros ── */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards      = document.querySelectorAll('.product-card');
+    const noResults  = document.getElementById('no-results');
+    const countEl   = document.getElementById('filter-count');
+
+    function updateCount(visible) {
+      countEl.textContent = visible === cards.length
+        ? `Mostrando toda la carta (${visible} productos)`
+        : `${visible} producto${visible !== 1 ? 's' : ''} encontrado${visible !== 1 ? 's' : ''}`;
+    }
+
+    function filterProducts(category) {
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const match = category === 'all' || card.dataset.category === category;
+        if (match) {
+          card.classList.remove('hidden');
+          card.style.setProperty('--stagger', `${visibleCount * 60}ms`);
+          void card.offsetWidth;
+          card.classList.add('entering');
+          card.addEventListener('animationend', () => card.classList.remove('entering'), { once: true });
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('entering');
+        }
+      });
+      noResults.hidden = visibleCount > 0;
+      updateCount(visibleCount);
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterProducts(btn.dataset.filter);
+        document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+
+    updateCount(cards.length);
+  </script>
+
+</body>
+</html>

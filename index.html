@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script>
+    if (sessionStorage.getItem('preloaderVisto') === 'true') {
+      document.documentElement.classList.add('no-preloader');
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO: Title optimizado con keyword principal -->
+  <title>Garden Boba Granada – Bubble Tea Artesanal y Açai Bowls en Granada</title>
+
+  <!-- SEO: Meta description -->
+  <meta name="description" content="Descubre el mejor Bubble Tea artesanal y Açai Bowls orgánicos de Granada. Garden Boba: sabores únicos, ambiente garden y delivery a domicilio vía Glovo." />
+
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://gardenboba.es/index.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Garden Boba Granada – Bubble Tea Artesanal y Açai Bowls" />
+  <meta property="og:description" content="El mejor Bubble Tea artesanal y Açai Bowls orgánicos de Granada. Ambiente garden, toppings frescos y delivery con Glovo. ¡Ven a probarlos!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gardenboba.es/index.html" />
+  <meta property="og:image" content="https://gardenboba.es/img/logo.png" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Garden Boba Granada" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Garden Boba Granada – Bubble Tea Artesanal y Açai Bowls" />
+  <meta name="twitter:description" content="El mejor Bubble Tea artesanal y Açai Bowls orgánicos de Granada. Ambiente garden, toppings frescos y delivery con Glovo." />
+  <meta name="twitter:image" content="https://gardenboba.es/img/logo.png" />
+
+  <!-- Schema Markup JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Garden Boba Granada",
+    "url": "https://gardenboba.es",
+    "logo": "https://gardenboba.es/img/logo.png",
+    "image": "https://gardenboba.es/img/logo.png",
+    "description": "Bubble Tea artesanal y Açai Bowls orgánicos en Granada. Ingredientes frescos, ambiente garden y delivery a domicilio.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Ejemplo 12",
+      "addressLocality": "Granada",
+      "addressCountry": "España"
+    },
+    "telephone": "+34 600 000 000",
+    "priceRange": "€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+        ],
+        "opens": "10:00",
+        "closes": "21:00"
+      }
+    ],
+    "servesCuisine": ["Bubble Tea", "Açai Bowls"],
+    "sameAs": [
+      "https://www.instagram.com/garden.boba"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="preloader">
+        <div class="preloader-content">
+        <div class="preloader-logo">
+          <img src="img/logo.png" alt="Logo de Garden Boba Granada" style="height: 110px; width: auto;" />
+        </div>
+        <div class="preloader-brand">Garden Boba</div>
+        
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+        </div>
+    </div>
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Garden Boba Granada – Bubble Tea y Açai" class="logo-img" />
+      Garden Boba
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="quienes-somos.html">Equipo</a>
+      <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+<a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada"
+         target="_blank"
+         rel="noopener"
+         class="nav-cta">Pedir en Glovo 🛵</a>    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="inicio">
+    <div class="hero-media">
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
+        alt="Variedad de coloridos Bubble Teas artesanales de Garden Boba Granada"
+        class="hero-img"
+        loading="eager"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-badge">✨ Ahora en Granada</span>
+      <!-- H1 con keyword principal -->
+      <h1 class="hero-title">El Bubble Tea más <em>fresco</em><br/>de Granada</h1>
+      <p class="hero-sub">
+        Bubble Tea artesanal · Açai Bowls orgánicos · Sabores que no olvidarás
+      </p>
+      <div class="hero-actions">
+        <a href="productos.html" class="btn btn-primary">Ver Productos 🧋</a>
+        <a href="quienes-somos.html" class="btn btn-ghost">Nuestra historia</a>
+        </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Descubre más</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" ...></svg>
+    </div>
+
+    <div id="hero-boba-container" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1;"></div>
+  </section>
+
+  <!-- ===================== SECCIÓN TEMÁTICA ===================== -->
+  <section class="features" id="quienes">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill">¿Por qué Garden Boba?</span>
+        <h2>Hecho con <em>amor</em> y mucho sabor</h2>
+        <p>Somos Granada's new favorite spot para recargar energía y disfrutar de texturas únicas.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🧋</div>
+          <h3>Bubble Tea Premium en Granada</h3>
+          <p>Tés de origen seleccionado, perlas de tapioca cocinadas al momento y leches plant-based. Cada sorbo es una experiencia.</p>
+        </div>
+
+        <div class="feature-card feature-card--accent">
+          <div class="feature-icon">🫐</div>
+          <h3>Açai Orgánico en Granada</h3>
+          <p>Pulpa de açai 100 % orgánica congelada en frío, sin aditivos. Toppings frescos de temporada directo del mercado.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🌿</div>
+          <h3>Ambiente Garden</h3>
+          <p>Un rincón verde en el corazón de Granada. Luz natural, plantas por todas partes y la vibra perfecta para tus fotos.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTOS / PROMOS ===================== -->
+  <section class="promos" id="productos">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill">Ofertas especiales</span>
+        <h2>Las promos de la <em>semana</em></h2>
+      </div>
+
+      <div class="promos-grid">
+
+        <!-- Tarjeta 1 -->
+        <article class="promo-card">
+          <div class="promo-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1625865408636-bb36c6e57423?w=800&q=80"
+              alt="Brown Sugar Bubble Tea con perlas de tapioca caramelizadas"
+              loading="lazy"
+            />
+            <span class="promo-badge">2×1</span>
+          </div>
+          <div class="promo-body">
+            <span class="promo-tag">Lunes y Martes</span>
+            <h3>Brown Sugar Boba</h3>
+            <p>Lleva dos por el precio de uno cada lunes y martes. Perfecta para compartir (o no 🤭).</p>
+            <a href="#contacto" class="btn btn-primary btn-sm">Quiero mi Boba</a>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="promo-card">
+          <div class="promo-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=800&q=80"
+              alt="Açai Bowl con frutas frescas y granola crujiente"
+              loading="lazy"
+            />
+            <span class="promo-badge promo-badge--green">Bowl Day</span>
+          </div>
+          <div class="promo-body">
+            <span class="promo-tag">Cada Viernes</span>
+            <h3>Açai Bowl + Bebida</h3>
+            <p>Combo de açai bowl grande con granola, fruta fresca y un bubble tea mediano por solo 9,90 €.</p>
+            <a href="#contacto" class="btn btn-primary btn-sm">Ver combo</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSTAGRAM PLACEHOLDER ===================== -->
+  <section class="instagram" id="instagram">
+    <div class="container">
+      <div class="section-header ig-header">
+        <span class="pill">Redes sociales</span>
+        <h2>Síguenos en <em>@garden.boba</em></h2>
+        <p>Comparte tu momento Garden Boba con el hashtag <strong>#GardenBobaGranada</strong> y aparece en nuestra página.</p>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-instagram"
+        >
+          <i class="fa-brands fa-instagram"></i> Ver Instagram
+        </a>
+      </div>
+
+      <!-- Embeds: visibles solo en desktop -->
+      <div class="ig-embed-grid">
+        <div class="ig-embed-wrap">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DYAa8KGsJK4/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        </div>
+        <div class="ig-embed-wrap">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DY5IJAIN5fO/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        </div>
+        <div class="ig-embed-wrap">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DYSXFh8ozLi/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        </div>
+      </div>
+
+      <!-- Botón: visible solo en móvil -->
+      <a href="https://www.instagram.com/garden.boba" target="_blank" rel="noopener" class="ig-mobile-cta">
+        <i class="fa-brands fa-instagram"></i> Ver nuestro Instagram
+      </a>
+
+<script async src="//www.instagram.com/embed.js"></script>
+    </div>
+  </section>
+  <section class="delivery-promo-section" style="background: #FFC244; color: #333; padding: 3rem 1rem; text-align: center; position: relative; z-index: 3;">
+  <div class="container" style="max-width: 600px; margin: 0 auto;">
+    <h3 style="font-family: var(--font-head); font-weight: 900; font-size: 1.8rem; margin-bottom: 0.5rem;">¿Te lo llevamos a casa? 🛵</h3>
+    <p style="font-size: 1rem; margin-bottom: 1.5rem; font-weight: 500;">Disfruta de tus Bubble Teas y Açai Bowls favoritos sin moverte del sofá a través de <strong>Glovo</strong>.</p>
+    <a href="https://glovoapp.com/es/es/granada/stores/garden-bobaacai-granada" target="_blank" class="btn" style="background: #333; color: #fff; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: transform 0.2s;">
+      Pedir en Glovo!
+    </a>
+  </div>
+</section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contacto">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">🌿 Garden Boba</p>
+        <p>Bubble Tea & Açai Bowls<br/>Granada, España</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram de Garden Boba Granada"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok de Garden Boba Granada"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="WhatsApp de Garden Boba Granada"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navegar</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="quienes-somos.html">Equipo</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Calle Ejemplo 12, Granada</p>
+        <p><i class="fa-solid fa-clock"></i> Lun–Dom · 10:00 – 21:00</p>
+        <p><i class="fa-solid fa-envelope"></i> hola@gardenboba.es</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Garden Boba · Hecho con 🧋 en Granada</p>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPT (burger + navbar scroll) ===================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+
+function animarEntradaHero() {
+  document.querySelector('.hero-content').style.opacity = '1';
+  anime({
+    targets: '.hero-badge, .hero-title, .hero-sub, .hero-actions',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(150),
+    duration: 800,
+    easing: 'easeOutQuad'
+  });
+}
+    window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+
+  if (sessionStorage.getItem('preloaderVisto') === 'true') {
+    if (preloader) preloader.remove();
+    animarEntradaHero(); // ← igual que la primera vez, pero sin preloader
+  } else {
+    sessionStorage.setItem('preloaderVisto', 'true');
+
+    const timeline = anime.timeline({ easing: 'easeInOutQuad' });
+
+    timeline
+      .add({
+        targets: '.preloader-logo',
+        scale: [1, 1.3, 1],
+        duration: 1000,
+        loop: true
+      })
+      .add({
+        targets: '.preloader-progress',
+        width: '100%',
+        duration: 800,
+        easing: 'linear'
+      }, 0)
+      .add({
+        targets: '.preloader-content',
+        opacity: 0,
+        scale: 0.8,
+        duration: 400,
+        easing: 'easeInBack'
+      })
+      .add({
+        targets: '#preloader',
+        translateY: '-100%',
+        duration: 800,
+        easing: 'easeInOutExpo',
+        complete: function() {
+          if (preloader) preloader.remove();
+          animarEntradaHero();
+        }
+      });
+  }
+});
+
+
+// Burger menu
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('nav-links');
+
+burger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  burger.classList.toggle('active');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.classList.remove('active');
+  });
+});
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Scroll-reveal
+const reveals = document.querySelectorAll(
+  '.feature-card, .promo-card, .ig-tile, .section-header'
+);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => observer.observe(el));
+  </script>
+  <script async src="//www.instagram.com/embed.js"></script>
+</body>
+</html>
