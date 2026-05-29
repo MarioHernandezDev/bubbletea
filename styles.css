@@ -1918,23 +1918,32 @@ html, body {
 /* ── FIX: Formulario cortado en móvil (contacto.html) ── */
 @media (max-width: 960px) {
   .contact-grid {
-    /**grid-template-columns: 1fr;
-    overflow: visible;*/
-    display:  none;
-  }
-
-  .contact-form-col,
-  .reveal-right {
-    transform: none !important;
-    opacity: 1 !important;
-    overflow: visible;
-  }
-
-  .form-wrapper {
+    grid-template-columns: 1fr;
     overflow: visible;
   }
 
   .contact-page-section {
     overflow: visible;
+  }
+
+  .contact-form-col {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+}
+
+/* Solo en móvil pequeño desactivamos la animación */
+@media (max-width: 480px) {
+  .reveal-right {
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
