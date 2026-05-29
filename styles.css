@@ -1914,27 +1914,13 @@ html, body {
   }
 }
 
-/* ── PRELOADER BURBUJAS ──────────────────────────────── */
-@media (max-width: 480px) {
-  .pre-bub--1 { left: 8%; }
-  .pre-bub--3 { left: 75%; }
-  .pre-bub--4 { left: 85%; }
-
-  .pre-brand {
-    font-size: 1.7rem;
-  }
-
-  .pre-logo-wrap {
-    width: 100px;
-    height: 100px;
-  }
-}
 
 /* ── FIX: Formulario cortado en móvil (contacto.html) ── */
 @media (max-width: 960px) {
   .contact-grid {
-    grid-template-columns: 1fr;
-    overflow: visible;
+    /**grid-template-columns: 1fr;
+    overflow: visible;*/
+    display:  none;
   }
 
   .contact-form-col,
